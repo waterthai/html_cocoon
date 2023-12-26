@@ -1,6 +1,6 @@
 <?php class Read_status extends CI_Controller
 {
-    private $path_file = "/home/pi/hottub_ma/txt_file/";
+    private $path_file = "/home/pi/hottub_cocoon/txt_file/";
     public function read_plc()
     {
         $slug = "status_plc.txt";
