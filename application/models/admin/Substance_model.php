@@ -24,6 +24,8 @@
     public function save_status_ph($field)
     {
         $ph = $this->db->select('*')->from('ph')->get()->result();
+        $ex_row = explode("_", $field);
+        $set_orp = "orp_" . $ex_row[1];
         if (count($ph) == 0) {
             $this->db->insert('ph', array(
                 $field => 1
@@ -37,24 +39,32 @@
                 $this->db->where('ph_id', 1)->update('ph', array(
                     $field => 1
                 ));
+                $this->db->where('orp_id', 1)->update('orp', array(
+                    $set_orp => 0
+                ));
             }
         }
     }
     public function save_status_orp($field)
     {
-        $ph = $this->db->select('*')->from('orp')->get()->result();
-        if (count($ph) == 0) {
+        $orp = $this->db->select('*')->from('orp')->get()->result();
+        $ex_row = explode("_", $field);
+        $set_ph = "ph_" . $ex_row[1];
+        if (count($orp) == 0) {
             $this->db->insert('orp', array(
                 $field => 1
             ));
         } else {
-            if ($ph[0]->$field == 1) {
+            if ($orp[0]->$field == 1) {
                 $this->db->where('orp_id', 1)->update('orp', array(
                     $field => 0
                 ));
             } else {
                 $this->db->where('orp_id', 1)->update('orp', array(
                     $field => 1
+                ));
+                $this->db->where('ph_id', 1)->update('ph', array(
+                    $set_ph => 0
                 ));
             }
         }

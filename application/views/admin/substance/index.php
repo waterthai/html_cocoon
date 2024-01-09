@@ -171,6 +171,8 @@
             $.post("<?= base_url('Write_status/write_on_off_ph') ?>", {}, function(response) {})
             if ($('#online_setting').val() == 1) {
                 set_ph_server(field);
+            } else {
+                location.reload();
             }
         })
 
@@ -181,7 +183,9 @@
         $.post(path_server, {
             field: field,
             machine_code: $('#machine_code').val()
-        }, function() {})
+        }, function() {
+            location.reload();
+        })
     }
 
     function set_orp(row, filtration_status) {
@@ -194,6 +198,8 @@
             })
             if ($('#online_setting').val() == 1) {
                 set_orp_server(field);
+            } else {
+                location.reload();
             }
         })
 
@@ -204,7 +210,9 @@
         $.post(path_server, {
             field: field,
             machine_code: $('#machine_code').val()
-        }, function() {})
+        }, function() {
+            location.reload();
+        })
     }
 
     function set_apf(row, filtration_status) {
