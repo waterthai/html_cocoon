@@ -1,6 +1,6 @@
 <?php class Write_status extends CI_Controller
 {
-    private $path_file = "/home/pi/hottub_cocoon/";
+    private $path_file = "/home/pi/";
 
     public function write_on_off_ph()
     {
