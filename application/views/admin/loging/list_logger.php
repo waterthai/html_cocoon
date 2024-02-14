@@ -56,7 +56,7 @@
                                                 <td class="text-nowrap"><?= $item->ph ?></td>
                                                 <td class="text-nowrap"><?= $item->orp ?></td>
                                                 <td class="text-nowrap"><?= $item->temp ?></td>
-                                                <td class="text-nowrap"><?= $item->temp ?></td>
+                                                <td class="text-nowrap"><?= $item->pressure ?></td>
                                                 <td class="text-nowrap"><?= $item->plc_q0 ?></td>
                                                 <td class="text-nowrap"><?= $item->plc_q1 ?></td>
                                                 <td class="text-nowrap"><?= $item->plc_q2 ?></td>
